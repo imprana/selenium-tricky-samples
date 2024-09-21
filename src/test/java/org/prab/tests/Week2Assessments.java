@@ -1,10 +1,10 @@
 package org.prab.tests;
 
-import org.prab.fw.TestBase;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
+import org.prab.fw.TestBase;
 import org.prab.pages.Week2DisabledInputPage;
 import org.prab.pages.Week2TagsPage;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,10 +13,14 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 public class Week2Assessments extends TestBase {
+    /*
+    Develop an automation script that will input a value in a disabled field. Use this url
+    https://seleniumpractise.blogspot.com/2016/09/how-to-work-with-disable-textbox-or.html
+    */
     @Test(priority = 1)
     public void disabledInputTest() {
         String firstName = "Jack";
-        String password = "Innova";
+        String password = "Automation";
         driver.navigate().to("https://seleniumpractise.blogspot.com/2016/09/how-to-work-with-disable-textbox-or.html");
         Week2DisabledInputPage week2DisabledInputPage = new Week2DisabledInputPage(driver);
 
@@ -31,9 +35,21 @@ public class Week2Assessments extends TestBase {
         assertEquals(week2DisabledInputPage.getNewPassword(), password, "Entered First Name is incorrect");
     }
 
+    /*
+    Create an automation test script that Add and remove tags and assert tags presence and display count
+    Steps:
+    Navigate to website
+    https://qaplayground.dev/apps/tags-input-box/
+    Print the number of the tags
+    Remove all the tags inside the box
+    Add 10 tags of any keywords you like
+    Verify that Count of number of tags is “0” and print in console
+    Now remove all tags and try to input “<script> alert() </script>” as keyword and add it
+    Try to get that value of the tag and print in console.
+    */
     @Test(priority = 2)
     public void tagsTest() {
-        String[] tagsList = {"Innova1", "Innova2", "Innova3", "Innova4", "Innova5", "Innova6", "Innova7", "Innova8", "Innova9", "Innova10"};
+        String[] tagsList = {"Automation1", "Automation2", "Automation3", "Automation4", "Automation5", "Automation6", "Automation7", "Automation8", "Automation9", "Automation10"};
 
         driver.navigate().to("https://qaplayground.dev/apps/tags-input-box/");
 

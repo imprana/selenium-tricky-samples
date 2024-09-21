@@ -17,10 +17,10 @@ import static org.testng.Assert.assertEquals;
 public class Week8DragAndSortPage {
     WebDriver driver;
 
-    private By checkOrderBtn = By.id("check");
-    private String position = "//li[@data-index='%s']";//span[text()='%s']";
-    private String person = "//p[text()='%s']";
-    private String personByIndex = "(//p[@class='person-name'])[%s]";
+    private final By checkOrderBtn = By.id("check");
+    private final String position = "//li[@data-index='%s']";//span[text()='%s']";
+    private final String person = "//p[text()='%s']";
+    private final String personByIndex = "(//p[@class='person-name'])[%s]";
 
     public Week8DragAndSortPage(WebDriver driver) {
         this.driver = driver;

@@ -16,9 +16,9 @@ import java.net.URL;
 
 public class Week5QRCodeGeneratorPage {
     WebDriver driver;
-    private By urlOrText = By.xpath("//input[@placeholder='Enter text or URL']");
-    private By generateQRCodeBtn = By.xpath("//button[text()='Generate QR Code']");
-    private By qrSrc = By.xpath("//img[@alt='qr-code']");
+    private final By urlOrText = By.xpath("//input[@placeholder='Enter text or URL']");
+    private final By generateQRCodeBtn = By.xpath("//button[text()='Generate QR Code']");
+    private final By qrSrc = By.xpath("//img[@alt='qr-code']");
 
     public Week5QRCodeGeneratorPage(WebDriver driver) {
         this.driver = driver;

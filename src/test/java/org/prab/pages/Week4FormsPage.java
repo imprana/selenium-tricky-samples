@@ -15,26 +15,27 @@ import java.net.http.HttpResponse;
 
 import static java.lang.String.format;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class Week4FormsPage {
     WebDriver driver;
 
-    private By firstName = By.id("RESULT_TextField-1");
-    private By lastName = By.id("RESULT_TextField-2");
-    private By phoneIp = By.id("RESULT_TextField-3");
+    private final By firstName = By.id("RESULT_TextField-1");
+    private final By lastName = By.id("RESULT_TextField-2");
+    private final By phoneIp = By.id("RESULT_TextField-3");
 
-    private By countryIp = By.id("RESULT_TextField-4");
-    private By cityIp = By.id("RESULT_TextField-5");
-    private By emailIp = By.id("RESULT_TextField-6");
+    private final By countryIp = By.id("RESULT_TextField-4");
+    private final By cityIp = By.id("RESULT_TextField-5");
+    private final By emailIp = By.id("RESULT_TextField-6");
 
-    private String genderIp = "//label[text()='%s']";
-    private String genderRadio = "//label[text()='%s']/preceding-sibling::input";
-    private String consistencyIp = "//label[text()='%s']";
-    private String consistencyChkBox = "//label[text()='%s']/preceding-sibling::input";
-    private By bestTimeIp = By.id("RESULT_RadioButton-9");
-    private By uploadIp = By.id("RESULT_FileUpload-10");
+    private final String genderIp = "//label[text()='%s']";
+    private final String genderRadio = "//label[text()='%s']/preceding-sibling::input";
+    private final String consistencyIp = "//label[text()='%s']";
+    private final String consistencyChkBox = "//label[text()='%s']/preceding-sibling::input";
+    private final By bestTimeIp = By.id("RESULT_RadioButton-9");
+    private final By uploadIp = By.id("RESULT_FileUpload-10");
 
-    private By response = By.tagName("pre");
+    private final By response = By.tagName("pre");
 
     public Week4FormsPage(WebDriver driver) {
         this.driver = driver;
@@ -108,10 +109,10 @@ public class Week4FormsPage {
         assertEquals(driver.findElement(emailIp).getAttribute("value"), email, "Email is incorrect");
 
         System.out.println("Gender Status: " + driver.findElement(By.xpath(format(genderRadio, gender))).isSelected());
-        assertEquals(driver.findElement(By.xpath(format(genderRadio, gender))).isSelected(), true, "Gender is incorrect");
+        assertTrue(driver.findElement(By.xpath(format(genderRadio, gender))).isSelected(), "Gender is incorrect");
 
         System.out.println("Consistency Status: " + driver.findElement(By.xpath(format(consistencyChkBox, consistency))).isSelected());
-        assertEquals(driver.findElement(By.xpath(format(consistencyChkBox, consistency))).isSelected(), true, "Consistency is incorrect");
+        assertTrue(driver.findElement(By.xpath(format(consistencyChkBox, consistency))).isSelected(), "Consistency is incorrect");
 
         WebElement element = driver.findElement(bestTimeIp);
         Select select = new Select(element);
@@ -133,8 +134,7 @@ public class Week4FormsPage {
     public JSONObject jsonNameHandler(String data) {
         JSONObject object = new JSONObject(data);
         JSONArray array = object.getJSONArray("results");
-        JSONObject name = array.getJSONObject(0).getJSONObject("name");
-        return name;
+        return array.getJSONObject(0).getJSONObject("name");
     }
 
     public String getFirstName(JSONObject data) {

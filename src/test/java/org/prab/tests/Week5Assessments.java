@@ -1,18 +1,22 @@
 package org.prab.tests;
 
-import com.github.javafaker.Faker;
 import org.prab.fw.TestBase;
-import org.testng.annotations.Test;
 import org.prab.pages.Week5QRCodeGeneratorPage;
 import org.prab.pages.Week5VerifyAccountPage;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
 import static org.testng.Assert.assertEquals;
 
 public class Week5Assessments extends TestBase {
+    /*
+    Navigate to https://qaplayground.dev/apps/verify-account/
+    Enter the verification code “999999”
+    Verify “Success” message
+    */
     @Test(priority = 1)
-    public void verifyAccountByKeyEvents() throws Exception {
+    public void verifyAccountByKeyEvents() {
         driver.navigate().to("https://qaplayground.dev/apps/verify-account/");
         Week5VerifyAccountPage verifyAccountPage = new Week5VerifyAccountPage(driver);
 
@@ -23,6 +27,13 @@ public class Week5Assessments extends TestBase {
         assertEquals(verifyAccountPage.getSuccessMessage(), "Success", "Success message is not displayed");
     }
 
+    /*
+    Navigate to https://qaplayground.dev/apps/qr-code-generator/
+    Enter “I am Test automation Engineer” in the text field
+    Click on “Generate QR code” button
+    Fetch the text content of the generated QR Code
+    Verify the text extracted is equal to the input text
+    */
     @Test(priority = 2)
     public void qrCodeGeneratorTest() throws Exception {
         driver.navigate().to("https://qaplayground.dev/apps/qr-code-generator/");

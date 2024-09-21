@@ -13,11 +13,10 @@ import static org.testng.Assert.assertEquals;
 public class Week7ContextMenuPage {
     WebDriver driver;
 
-    private By bodyContent = By.xpath("//body[not(self::nav)]");
-    private By shareMenu = By.xpath("//span[text()='Share']");
-    private By shareMenuOptions = By.xpath("//ul[@class='share-menu']//li");
-    private String shareMedia = "//span[text()='%s']";
-    private By message = By.id("msg");
+    private final By bodyContent = By.xpath("//body[not(self::nav)]");
+    private final By shareMenu = By.xpath("//span[text()='Share']");
+    private final By shareMenuOptions = By.xpath("//ul[@class='share-menu']//li");
+    private final By message = By.id("msg");
 
     public Week7ContextMenuPage(WebDriver driver) {
         this.driver = driver;

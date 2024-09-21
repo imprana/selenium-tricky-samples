@@ -1,17 +1,22 @@
 package org.prab.tests;
 
 import org.prab.fw.TestBase;
-import org.testng.annotations.Test;
 import org.prab.pages.Week9DownloadPage;
 import org.prab.pages.Week9MouseHoverPage;
 import org.prab.utils.FileOperations;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.text.DecimalFormat;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class Week9Assessments extends TestBase {
+    /*
+    Navigate to https://qaplayground.dev/apps/mouse-hover/
+    Hover the mouse on the movie poster
+    Display the price
+    */
     @Test(priority = 1)
     public void hoverTest() {
         driver.navigate().to("https://qaplayground.dev/apps/mouse-hover/");
@@ -19,12 +24,17 @@ public class Week9Assessments extends TestBase {
 
         // Do mouse hover
         mouseHoverPage.doMouseHoverOnThePoster();
-        assertEquals(mouseHoverPage.isPosterDetailsDisplayed(), true,
-                "The poster content does not appear when the mouse hovers over it.");
+        assertTrue(mouseHoverPage.isPosterDetailsDisplayed(), "The poster content does not appear when the mouse hovers over it.");
         // Print the price details
         mouseHoverPage.printPriceDetails();
     }
 
+    /*
+    Navigate to https://demo.automationtesting.in/FileDownload.html
+    Click on Download button. A sample file is downloaded
+    Print the filename, size, path of the file downloaded
+    Verify the text “Get Tickets” is present in the file
+    */
     @Test(priority = 2)
     public void downloadTest() throws Exception {
         // Delete the Previous files if any
@@ -37,8 +47,7 @@ public class Week9Assessments extends TestBase {
         System.out.println("Download path: " + downloadPath);
         // Do download
         downloadPage.doDownload();
-        assertEquals(FileOperations.validateFileDownload(downloadPath, downloadFileName, false), true,
-                "File has not been downloaded.");
+        assertTrue(FileOperations.validateFileDownload(downloadPath, downloadFileName, false), "File has not been downloaded.");
 
         // Print file details
         File file = FileOperations.getLatestFileFromDir(downloadPath);
@@ -55,7 +64,6 @@ public class Week9Assessments extends TestBase {
 
         // Read validate the file content
         String pdfContent = FileOperations.getPDFContent(filePath);
-        assertEquals(pdfContent.contains("Get Tickets"), true,
-                "PDF content does not have the word 'Get Tickets'");
+        assertTrue(pdfContent.contains("Get Tickets"), "PDF content does not have the word 'Get Tickets'");
     }
 }

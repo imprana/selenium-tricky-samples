@@ -15,9 +15,9 @@ import static org.testng.Assert.assertTrue;
 public class Week10RedirectPage {
     WebDriver driver;
 
-    private By startRedirectionChainBtn = By.id("redirect");
-    private By infoMsg = By.id("info");
-    private By goBackBtn = By.xpath("//a[text()='Go Back']");
+    private final By startRedirectionChainBtn = By.id("redirect");
+    private final By infoMsg = By.id("info");
+    private final By goBackBtn = By.xpath("//a[text()='Go Back']");
 
     public Week10RedirectPage(WebDriver driver) {
         this.driver = driver;

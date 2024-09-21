@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Week2TagsPage {
     WebDriver driver;
-    private By tagsInput = By.xpath("//div[@class='content']//input");
-    private By selectedTagsList = By.xpath("//div[@class='content']/ul/li");
+    private final By tagsInput = By.xpath("//div[@class='content']//input");
+    private final By selectedTagsList = By.xpath("//div[@class='content']/ul/li");
     public By removeAllBtn = By.xpath("//button[text()='Remove All']");
 
     public Week2TagsPage(WebDriver driver) {
@@ -22,23 +22,23 @@ public class Week2TagsPage {
     public ArrayList<String> getSelectedTagsAsValue() {
         List<WebElement> elements = driver.findElements(selectedTagsList);
         ArrayList<String> list = new ArrayList<>();
-        elements.stream().forEach(element -> list.add(element.getText().trim()));
+        elements.forEach(element -> list.add(element.getText().trim()));
         return list;
     }
 
     public List<WebElement> getSelectedTagsAsElements() {
-        List<WebElement> elements = driver.findElements(selectedTagsList);
-        return elements;
+        return driver.findElements(selectedTagsList);
     }
 
     public void enterTags(String... tags) {
         WebElement element = driver.findElement(tagsInput);
-        for(String tag:tags) {
+        for (String tag : tags) {
             element.sendKeys(tag);
             Actions actions = new Actions(driver);
             actions.sendKeys(Keys.ENTER).build().perform();
         }
     }
+
     public void clickRemoveAllBtn() {
         driver.findElement(removeAllBtn).click();
     }

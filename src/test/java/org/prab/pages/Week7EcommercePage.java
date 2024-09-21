@@ -14,16 +14,16 @@ import static java.lang.String.format;
 public class Week7EcommercePage {
     WebDriver driver;
 
-    private By megaMenu = By.xpath("//span[contains(text(), 'Mega Menu')]");
-    private String megaMenuOption = "//a[@title='%s']";
+    private final By megaMenu = By.xpath("//span[contains(text(), 'Mega Menu')]");
+    private final String megaMenuOption = "//a[@title='%s']";
 
-    private By productThumb = By.className("product-thumb");
-    private By productsToShow = By.id("input-limit-212433");
-    
-    private By productName = By.cssSelector(".caption h4");
-    private By productPrice = By.cssSelector(".price");
+    private final By productThumb = By.className("product-thumb");
+    private final By productsToShow = By.id("input-limit-212433");
 
-    private By sortDD = By.id("input-sort-212434");
+    private final By productName = By.cssSelector(".caption h4");
+    private final By productPrice = By.cssSelector(".price");
+
+    private final By sortDD = By.id("input-sort-212434");
 
 
     public Week7EcommercePage(WebDriver driver) {

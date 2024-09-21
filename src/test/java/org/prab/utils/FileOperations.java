@@ -6,6 +6,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class FileOperations {
     public static void deleteFilesFromDir(String folderName) {
@@ -29,12 +30,14 @@ public class FileOperations {
         File dir = new File(folderName);
         File[] files = dir.listFiles();
 
-        while (files.length == 0) {
-            if (files == null || files.length == 0)
-                files = dir.listFiles();
+        if (files != null) {
+            while (Objects.requireNonNull(files).length == 0) {
+                if (files.length == 0)
+                    files = dir.listFiles();
+            }
         }
 
-        File lastModifiedFile = files[0];
+        File lastModifiedFile = Objects.requireNonNull(files)[0];
         for (int i = 1; i < files.length; i++) {
             if (lastModifiedFile.lastModified() < files[i].lastModified()) {
                 lastModifiedFile = files[i];
