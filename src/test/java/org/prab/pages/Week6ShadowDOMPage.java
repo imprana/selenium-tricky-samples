@@ -14,10 +14,10 @@ import java.io.IOException;
 public class Week6ShadowDOMPage {
     WebDriver driver;
 
-    private SearchContext shadowRoot;
-    private By guidIp = By.id("editField");
-    private By generateGUIDBtn = By.id("buttonGenerate");
-    private By copyGUIDBtn = By.id("buttonCopy");
+    private final SearchContext shadowRoot;
+    private final By guidIp = By.id("editField");
+    private final By generateGUIDBtn = By.id("buttonGenerate");
+    private final By copyGUIDBtn = By.id("buttonCopy");
 
     public Week6ShadowDOMPage(WebDriver driver) {
         this.driver = driver;

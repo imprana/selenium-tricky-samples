@@ -1,21 +1,22 @@
 package org.prab.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class Week6ShoppingPage {
     WebDriver driver;
 
-    private By createAccount = By.linkText("Create an Account");
-    private By firstname = By.id("firstname");
-    private By lastname = By.id("lastname");
-    private By email = By.id("email_address");
-    private By password = By.id("password");
-    private By cnfPassword = By.id("password-confirmation");
-    private By createAccountBtn = By.xpath("//button[@title='Create an Account']");
+    private final By createAccount = By.linkText("Create an Account");
+    private final By firstname = By.id("firstname");
+    private final By lastname = By.id("lastname");
+    private final By email = By.id("email_address");
+    private final By password = By.id("password");
+    private final By cnfPassword = By.id("password-confirmation");
+    private final By createAccountBtn = By.xpath("//button[@title='Create an Account']");
     public By whatsNew = By.id("ui-id-3");
 
-    public By adHide=By.xpath("//div[@class=\"ea-stickybox-hide\"]");
+    public By addHide = By.xpath("//div[@class=\"ea-stickybox-hide\"]");
     public String pdtItemByIndex = "(//a[@class='product-item-link'])[%s]";
     public By pdtName = By.xpath("//span[@itemprop='name']");
     public By pdtPrice = By.xpath("//span[@class='price']");
@@ -31,7 +32,7 @@ public class Week6ShoppingPage {
     public By billingPdtName = By.xpath("//strong[@class='product-item-name']");
     public By billingPrice = By.xpath("//span[@class='cart-price']/span");
 
-    private By myAccountHeader = By.xpath("//h1/span[text()='My Account']");
+    private final By myAccountHeader = By.xpath("//h1/span[text()='My Account']");
 
     public Week6ShoppingPage(WebDriver driver) {
         this.driver = driver;
@@ -54,5 +55,13 @@ public class Week6ShoppingPage {
 
     public boolean isMyAccountDisplayed() {
         return driver.findElement(myAccountHeader).isDisplayed();
+    }
+
+    public void closeAddIfExists() {
+        try {
+            driver.findElement(addHide).click();
+        } catch (NoSuchElementException nse) {
+            System.out.println("No add displayed!");
+        }
     }
 }

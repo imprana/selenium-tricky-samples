@@ -10,8 +10,8 @@ import java.time.Duration;
 
 public class Week4GrownButtonPage {
     WebDriver driver;
-    private By grownBtn = By.id("growbutton");
-    private By grownBtnStatus = By.id("growbuttonstatus");
+    private final By grownBtn = By.id("growbutton");
+    private final By grownBtnStatus = By.id("growbuttonstatus");
 
     public Week4GrownButtonPage(WebDriver driver) {
         this.driver = driver;

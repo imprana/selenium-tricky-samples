@@ -12,9 +12,9 @@ import java.util.List;
 public class Week5VerifyAccountPage {
     WebDriver driver;
 
-    private By otpInput = By.xpath("//input[@type='number']");
-    private By success = By.xpath("//small[contains(@class, 'success')]");
-    private By otpCode = By.xpath("//small[@class='info']");
+    private final By otpInput = By.xpath("//input[@type='number']");
+    private final By success = By.xpath("//small[contains(@class, 'success')]");
+    private final By otpCode = By.xpath("//small[@class='info']");
 
     public Week5VerifyAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -23,9 +23,9 @@ public class Week5VerifyAccountPage {
     public int[] extractOTP() {
         String input = driver.findElement(otpCode).getText().trim();
         String digits = StringUtils.getDigits(input);
-        int[] otp = Arrays.stream(digits.split("")).mapToInt(Integer::parseInt).toArray();
-        return otp;
+        return Arrays.stream(digits.split("")).mapToInt(Integer::parseInt).toArray();
     }
+
     public void verificationCodeByKeyEvents(int[] otp) {
         List<WebElement> elements = driver.findElements(otpInput);
 

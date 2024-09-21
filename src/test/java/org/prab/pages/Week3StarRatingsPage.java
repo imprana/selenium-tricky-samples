@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 
 public class Week3StarRatingsPage {
     WebDriver driver;
-    private By starRating = By.className("star-rating");
-    private By ratingInput = By.id("txt_rating");
-    private By checkRatingBtn = By.id("check_rating");
-    private By validateRatingText = By.id("validate_rating");
+    private final By starRating = By.className("star-rating");
+    private final By ratingInput = By.id("txt_rating");
+    private final By checkRatingBtn = By.id("check_rating");
+    private final By validateRatingText = By.id("validate_rating");
 
     public Week3StarRatingsPage(WebDriver driver) {
         this.driver = driver;

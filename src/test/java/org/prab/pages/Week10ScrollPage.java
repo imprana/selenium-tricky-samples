@@ -5,20 +5,17 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static java.lang.String.format;
-import static org.testng.Assert.assertEquals;
-
 public class Week10ScrollPage {
     WebDriver driver;
 
-    private By infoMsg = By.id("info");
-    private By youFoundMe = By.id("fugitive");
+    private final By infoMsg = By.id("info");
+    private final By youFoundMe = By.id("fugitive");
 
     public Week10ScrollPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public String getInfoMessage () {
+    public String getInfoMessage() {
         return driver.findElement(infoMsg).getText().trim();
     }
 

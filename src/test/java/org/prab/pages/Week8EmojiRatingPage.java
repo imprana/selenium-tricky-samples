@@ -12,15 +12,16 @@ import java.util.List;
 
 import static java.lang.String.format;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class Week8EmojiRatingPage {
     WebDriver driver;
 
-    private By stars = By.xpath("//div[@class='stars']/label");
-    private String starsLabel = "//label[@for='star-%s']";
-    private By ratingText = By.cssSelector("span.text");
-    private By ratingNumber = By.cssSelector("span.numb");
-    private String emoji = "//img[@src='emojis/emoji-%s.png']";
+    private final By stars = By.xpath("//div[@class='stars']/label");
+    private final String starsLabel = "//label[@for='star-%s']";
+    private final By ratingText = By.cssSelector("span.text");
+    private final By ratingNumber = By.cssSelector("span.numb");
+    private final String emoji = "//img[@src='emojis/emoji-%s.png']";
 
     public Week8EmojiRatingPage(WebDriver driver) {
         this.driver = driver;
@@ -56,35 +57,35 @@ public class Week8EmojiRatingPage {
             case 1:
                 System.out.println("Validating Star rating: " + star);
                 WebElement element1 = waitForEmoji(By.xpath(format(emoji, star)));
-                assertEquals(element1.isDisplayed(), true, "Emoji is not displayed correctly for Rating Star: " + star);
+                assertTrue(element1.isDisplayed(), "Emoji is not displayed correctly for Rating Star: " + star);
                 assertEquals(getRatingComment(), "I just hate it", "Comment is incorrect for Rating Star: " + star);
                 assertEquals(getRatingNumber(), "1 out of 5", "Number is incorrect for Rating Star: " + star);
                 break;
             case 2:
                 System.out.println("Validating Star rating: " + star);
                 WebElement element2 = waitForEmoji(By.xpath(format(emoji, star)));
-                assertEquals(element2.isDisplayed(), true, "Emoji is not displayed correctly for Rating Star: " + star);
+                assertTrue(element2.isDisplayed(), "Emoji is not displayed correctly for Rating Star: " + star);
                 assertEquals(getRatingComment(), "I don't like it", "Comment is incorrect for Rating Star: " + star);
                 assertEquals(getRatingNumber(), "2 out of 5", "Number is incorrect for Rating Star: " + star);
                 break;
             case 3:
                 System.out.println("Validating Star rating: " + star);
                 WebElement element3 = waitForEmoji(By.xpath(format(emoji, star)));
-                assertEquals(element3.isDisplayed(), true, "Emoji is not displayed correctly for Rating Star: " + star);
+                assertTrue(element3.isDisplayed(), "Emoji is not displayed correctly for Rating Star: " + star);
                 assertEquals(getRatingComment(), "This is awesome", "Comment is incorrect for Rating Star: " + star);
                 assertEquals(getRatingNumber(), "3 out of 5", "Number is incorrect for Rating Star: " + star);
                 break;
             case 4:
                 System.out.println("Validating Star rating: " + star);
                 WebElement element4 = waitForEmoji(By.xpath(format(emoji, star)));
-                assertEquals(element4.isDisplayed(), true, "Emoji is not displayed correctly for Rating Star: " + star);
+                assertTrue(element4.isDisplayed(), "Emoji is not displayed correctly for Rating Star: " + star);
                 assertEquals(getRatingComment(), "I just like it", "Comment is incorrect for Rating Star: " + star);
                 assertEquals(getRatingNumber(), "4 out of 5", "Number is incorrect for Rating Star: " + star);
                 break;
             case 5:
                 System.out.println("Validating Star rating: " + star);
                 WebElement element5 = waitForEmoji(By.xpath(format(emoji, star)));
-                assertEquals(element5.isDisplayed(), true, "Emoji is not displayed correctly for Rating Star: " + star);
+                assertTrue(element5.isDisplayed(), "Emoji is not displayed correctly for Rating Star: " + star);
                 assertEquals(getRatingComment(), "I just love it", "Comment is incorrect for Rating Star: " + star);
                 assertEquals(getRatingNumber(), "5 out of 5", "Number is incorrect for Rating Star: " + star);
                 break;

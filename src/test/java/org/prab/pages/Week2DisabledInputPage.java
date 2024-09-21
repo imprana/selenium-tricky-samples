@@ -11,10 +11,10 @@ import java.time.Duration;
 
 public class Week2DisabledInputPage {
     WebDriver driver;
-    private By firstName = By.id("fname");
-    private By password = By.id("pass");
-    private By newPassword = By.id("passnew");
-    private By showMeBtn = By.xpath("//input[@value='Show me']");
+    private final By firstName = By.id("fname");
+    private final By password = By.id("pass");
+    private final By newPassword = By.id("passnew");
+    private final By showMeBtn = By.xpath("//input[@value='Show me']");
 
     public Week2DisabledInputPage(WebDriver driver) {
         this.driver = driver;
@@ -27,8 +27,9 @@ public class Week2DisabledInputPage {
     }
 
     public String getFirstName() {
-        return  driver.findElement(firstName).getAttribute("value").trim();
+        return driver.findElement(firstName).getAttribute("value").trim();
     }
+
     public void enterPassword(String pass) {
         WebElement element = driver.findElement(password);
         if (!element.isEnabled()) {
@@ -40,7 +41,7 @@ public class Week2DisabledInputPage {
     }
 
     public String getPassword() {
-        return  driver.findElement(password).getAttribute("value").trim();
+        return driver.findElement(password).getAttribute("value").trim();
     }
 
     public void enterNewPassword(String pass) {
@@ -54,7 +55,7 @@ public class Week2DisabledInputPage {
     }
 
     public String getNewPassword() {
-        return  driver.findElement(newPassword).getAttribute("value").trim();
+        return driver.findElement(newPassword).getAttribute("value").trim();
     }
 
     public void clickShowMeBtn() {

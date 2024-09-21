@@ -1,10 +1,10 @@
 package org.prab.tests;
 
-import org.prab.fw.TestBase;
 import org.json.JSONObject;
-import org.testng.annotations.Test;
+import org.prab.fw.TestBase;
 import org.prab.pages.Week4FormsPage;
 import org.prab.pages.Week4GrownButtonPage;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +12,10 @@ import java.io.IOException;
 import static org.testng.Assert.assertEquals;
 
 public class Week4Assessments extends TestBase {
+    /*
+    Navigate to https://testpages.eviltester.com/styled/challenges/growing-clickable.html
+    Click on the growing button and once clicked you should see “Event Triggered” message. Verify that message
+    */
     @Test(priority = 1)
     public void growingButtonTest() {
         System.out.println("Week 4 - Problem 1: Click Growing Button");
@@ -24,6 +28,12 @@ public class Week4Assessments extends TestBase {
         assertEquals(eventMsg, "Event Triggered", "Event message is incorrect");
     }
 
+    /*
+    Navigate to https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407
+    For the fields Firstname and Lastname, use getapi https://randomuser.me/api/
+    Fill rest of the form and
+    Don’t click Submit
+    */
     @Test(priority = 2)
     public void formDetailsWithAPIResponse() throws IOException, InterruptedException {
         System.out.println("Week 4 - Problem 2-1: Fill the Form thru API response (HTTP)");
@@ -38,7 +48,7 @@ public class Week4Assessments extends TestBase {
 
         String file = System.getProperty("user.dir") + File.separator + "data" + File.separator + "uploadfile.JPG";
         formsPage.enterFormDetails(fname, lname, "9876543210", "India", "Chennai",
-                "dummy@dummy.com", "Male", "Tuesday", "Evening", true, file);
+                "dummy@dummy.com", "Male", "Tuesday", "Evening", false, file);
     }
 
     @Test(priority = 3)

@@ -8,13 +8,13 @@ import java.util.List;
 
 public class Week1MaximumLinksPage {
     WebDriver driver;
-    private By linksByTagName= By.tagName("a");
+    private final By linksByTagName = By.tagName("a");
 
     public Week1MaximumLinksPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public List<WebElement> getAllLinksAsList() {
-        return  driver.findElements(linksByTagName);
+        return driver.findElements(linksByTagName);
     }
 }

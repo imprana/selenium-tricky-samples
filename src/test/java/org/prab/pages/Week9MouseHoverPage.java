@@ -9,10 +9,10 @@ import java.util.NoSuchElementException;
 public class Week9MouseHoverPage {
     WebDriver driver;
 
-    private By poster = By.cssSelector("img.poster");
-    private By posterContent = By.cssSelector("div.title-content");
-    private By currentPrice = By.cssSelector("p.current-price");
-    private By oldPrice = By.cssSelector("p.old-price");
+    private final By poster = By.cssSelector("img.poster");
+    private final By posterContent = By.cssSelector("div.title-content");
+    private final By currentPrice = By.cssSelector("p.current-price");
+    private final By oldPrice = By.cssSelector("p.old-price");
 
     public Week9MouseHoverPage(WebDriver driver) {
         this.driver = driver;

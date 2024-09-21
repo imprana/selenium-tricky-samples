@@ -2,16 +2,13 @@ package org.prab.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-
-import java.util.NoSuchElementException;
 
 public class Week10ProgressBarPage {
     WebDriver driver;
 
-    private By startButton = By.id("startButton");
-    private By stopButton = By.id("stopButton");
-    private By progressBar = By.id("progressBar");
+    private final By startButton = By.id("startButton");
+    private final By stopButton = By.id("stopButton");
+    private final By progressBar = By.id("progressBar");
 
     public Week10ProgressBarPage(WebDriver driver) {
         this.driver = driver;
@@ -28,7 +25,7 @@ public class Week10ProgressBarPage {
     public void waitForProgressBar(int percentage) {
         while (true) {
             int currentPercentage = Integer.parseInt(driver.findElement(progressBar).getText().trim().replace("%", ""));
-            if(currentPercentage >= percentage) {
+            if (currentPercentage >= percentage) {
                 clickStopButton();
                 break;
             }

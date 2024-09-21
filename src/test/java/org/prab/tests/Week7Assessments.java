@@ -1,11 +1,18 @@
 package org.prab.tests;
 
 import org.prab.fw.TestBase;
-import org.testng.annotations.Test;
 import org.prab.pages.Week7ContextMenuPage;
 import org.prab.pages.Week7EcommercePage;
+import org.testng.annotations.Test;
 
 public class Week7Assessments extends TestBase {
+    /*
+    Navigate to http://uitestingplayground.com/shadowdom
+    Right click on the page to see the context menu
+    Hover on "Share" option
+    Click on each of the sub menu options under Share
+    Verify the message displayed. e.g: "Menu item Twitter clicked"
+    */
     @Test(priority = 1)
     public void contextMenuTest() {
         driver.navigate().to("https://qaplayground.dev/apps/context-menu/");
@@ -13,8 +20,16 @@ public class Week7Assessments extends TestBase {
         contextMenu.doShareAndTest();
     }
 
+    /*
+    Navigate to https://ecommerce-playground.lambdatest.io
+    Click on Mega menu -> Apple
+    Print the number of products displayed in the page
+    Print the names and prices of first 5 products
+    Sort the products by price - Low to high
+    Print the names and prices of first 5 products
+    */
     @Test(priority = 2)
-    public void sortingTest() throws InterruptedException {
+    public void sortingTest() {
         driver.navigate().to("https://ecommerce-playground.lambdatest.io/");
         Week7EcommercePage ecommercePage = new Week7EcommercePage(driver);
 
@@ -29,7 +44,7 @@ public class Week7Assessments extends TestBase {
         ecommercePage.setProductsToShow("100");
         System.out.println("Total products displayed in the current page: " + ecommercePage.getProductsCount());
 
-        int limit = (count > 5) ? 5 : count; // If the total count is less than 5 then it will take the count
+        int limit = Math.min(count, 5); // If the total count is less than 5 then it will take the count
         // Print first 5 products Name and Price (Before Sort)
         System.out.println("First " + limit + " product details before sorting");
         ecommercePage.printProductDetailsByLimit(limit);
