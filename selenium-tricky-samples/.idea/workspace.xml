@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f04df80-b496-4982-89c0-010bc6d68e0e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2mMgTdLD7ZmU16wtsKsI48L3Bca" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.C:/Users/Prabhu/SeleniumWP/selenium-tricky-samples/selenium-tricky-samples/ExecuteTests.xml.executor": "Run",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Prabhu/SeleniumWP/selenium-tricky-samples/selenium-tricky-samples",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Prabhu\SeleniumWP\selenium-tricky-samples\selenium-tricky-samples" />
+      <recent name="C:\Users\Prabhu\SeleniumWP\selenium-tricky-samples\selenium-tricky-samples\src\test\java\org\prab\utils" />
+      <recent name="C:\Users\Prabhu\SeleniumWP\selenium-tricky-samples\selenium-tricky-samples\src\test\java\org\prab\fw" />
+      <recent name="C:\Users\Prabhu\SeleniumWP\selenium-tricky-samples\selenium-tricky-samples\src\test\java\org\prab\pages" />
+      <recent name="C:\Users\Prabhu\SeleniumWP\selenium-tricky-samples\selenium-tricky-samples\src\test\java\org\prab\tests" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="C:/Users/Prabhu/SeleniumWP/selenium-tricky-samples/selenium-tricky-samples/ExecuteTests.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-tricky-samples" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/ExecuteTests.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.C:/Users/Prabhu/SeleniumWP/selenium-tricky-samples/selenium-tricky-samples/ExecuteTests.xml" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f04df80-b496-4982-89c0-010bc6d68e0e" name="Changes" comment="" />
+      <created>1726891867379</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726891867379</updated>
+    </task>
+    <servers />
+  </component>
+</project>

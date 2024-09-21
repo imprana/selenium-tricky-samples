@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QA CoE Code Challenge Tests">
+    <test name="QA CoE Code Challenge Tests">
+        <classes>
+            <class name="org.prab.tests.Week1Assessments"/>
+            <class name="org.prab.tests.Week2Assessments"/>
+            <class name="org.prab.tests.Week3Assessments"/>
+            <class name="org.prab.tests.Week4Assessments"/>
+            <class name="org.prab.tests.Week5Assessments"/>
+            <class name="org.prab.tests.Week6Assessments"/>
+            <class name="org.prab.tests.Week7Assessments"/>
+            <class name="org.prab.tests.Week8Assessments"/>
+            <class name="org.prab.tests.Week9Assessments"/>
+            <class name="org.prab.tests.Week10Assessments"/>
+        </classes>
+    </test>
+</suite>
